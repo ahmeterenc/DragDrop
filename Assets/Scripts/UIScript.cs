@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
-    public string OyunSahnesi;
-    public string AnaSahne;
+    public GameObject gamePanel;
+    public GameObject homePanel;
  
     public void StartGame()
     {
-        SceneManager.LoadScene(OyunSahnesi);
+        gamePanel.SetActive(true);
+        homePanel.SetActive(false);
     }
     public void QuitGame()
     {
@@ -18,6 +19,7 @@ public class UIScript : MonoBehaviour
     }
     public void GeriDon()
     {
-        SceneManager.LoadScene(AnaSahne);
+        homePanel.SetActive(true);
+        gamePanel.SetActive(false);
     }
 }
